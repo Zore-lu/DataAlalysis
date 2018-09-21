@@ -20,8 +20,11 @@ class DataAlalysis():
     def handleData(self,datas):
         # 筛选出指定字段的数据
         reDatas1 = datas.reindex(columns = ['year','month','births'])
+        # 查找某个值对应的数据
+        reDatas2 = datas.loc[datas['month'] == 1]
         # 删除重复的数据
         reDatas = reDatas1.drop_duplicates()
+
         return reDatas
 
     def saveData(self,reDatas):
